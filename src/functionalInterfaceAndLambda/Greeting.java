@@ -1,3 +1,5 @@
+package functionalInterfaceAndLambda;
+
 public class Greeting {
 
     private String name;

@@ -1,3 +1,5 @@
+package functionalInterfaceAndLambda;
+
 import java.util.function.*;
 
 public class Lec3 {

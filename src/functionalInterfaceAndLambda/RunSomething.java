@@ -1,3 +1,5 @@
+package functionalInterfaceAndLambda;
+
 @FunctionalInterface
 public interface RunSomething {
 
