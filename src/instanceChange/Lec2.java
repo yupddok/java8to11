@@ -7,35 +7,35 @@ import java.util.stream.Collectors;
 
 public class Lec2 {
     public static void main(String[] args) {
-        ArrayList<String> name = new ArrayList<>();
-        name.add("bae");
-        name.add("jeong");
-        name.add("yoon");
+        ArrayList<String> names = new ArrayList<>();
+        names.add("bae");
+        names.add("jeong");
+        names.add("yoon");
 
         // 1. Iterable의 기본 메소드 : forEach()
-        name.forEach(System.out::println);
+        names.forEach(System.out::println);
 
-        for (String n : name) {
+        for (String n : names) {
             System.out.println(n);
         }
 
-        Spliterator<String> spliterator = name.spliterator();
+        Spliterator<String> spliterator = names.spliterator();
         Spliterator<String> spliterator1 = spliterator.trySplit();
         while (spliterator.tryAdvance(System.out::println));
         System.out.println("====");
         while (spliterator1.tryAdvance(System.out::println));
 
-        name.stream()
+        names.stream()
                 .map(String::toUpperCase)
                 .filter(s -> s.startsWith("B"))
                 .collect(Collectors.toSet());
 
-        name.removeIf(s -> s.startsWith("b"));
-        name.forEach(System.out::println);
+        names.removeIf(s -> s.startsWith("b"));
+        names.forEach(System.out::println);
 
         Comparator<String> compareToIgnoreCase = String::compareToIgnoreCase;
-        name.sort(compareToIgnoreCase);
-        name.sort(compareToIgnoreCase.reversed());
+        names.sort(compareToIgnoreCase);
+        names.sort(compareToIgnoreCase.reversed());
 
 
 
